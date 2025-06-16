@@ -1,0 +1,13 @@
+[workspace]
+authors = ["Jun Park <pj2417@gmail.com>"]
+channels = ["https://conda.modular.com/max-nightly", "conda-forge"]
+name = "mojo-study"
+platforms = ["osx-arm64"]
+version = "0.1.0"
+
+[tasks]
+
+[dependencies]
+modular = ">=25.5.0.dev2025061605,<26"
+python = ">=3.11,<3.13"
+pygame = ">=2.6.1,<3"
