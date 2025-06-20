@@ -6,7 +6,11 @@ shared = stack_allocation[
     Scalar[dtype], # 저장될 타입
     address_space = AddressSpace.SHARED, # 공유 메모리
 ]()
+
+shared = LayoutTensorBuild[dtype]().row_major[TPB]().shared().alloc() # Allocate shared memory using tensor builder
 ```
+
+
 
 ## Memory hierarchy
 - Global memory: a and output arrays (slow, visible to all blocks)
