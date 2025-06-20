@@ -10,8 +10,6 @@ shared = stack_allocation[
 shared = LayoutTensorBuild[dtype]().row_major[TPB]().shared().alloc() # Allocate shared memory using tensor builder
 ```
 
-
-
 ## Memory hierarchy
 - Global memory: a and output arrays (slow, visible to all blocks)
 - Shared memory: shared array (fast, thread-block local)
@@ -28,3 +26,9 @@ shared = LayoutTensorBuild[dtype]().row_major[TPB]().shared().alloc() # Allocate
 - Sync: barrier() ensures all loads complete
 - Process: Add 10 to shared values
 - Store: Write 11s back to global memory
+
+## optimizes performance through: 
+- Minimal global memory access
+- Fast shared memory neighbor lookups
+- Clean boundary handling
+- Efficient memory coalescing
